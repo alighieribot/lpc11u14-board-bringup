@@ -1,0 +1,4 @@
+# GitHub Linguist overrides
+# Ignore generated interactive BOM and footprint documentation from language statistics
+*.html linguist-generated=true
+*.htm linguist-documentation=true
