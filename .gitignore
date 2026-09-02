@@ -1,0 +1,30 @@
+# Redundant archives
+*.zip
+
+# Temporary scrap files
+scratch*
+doc_pages*
+
+# KiCad
+*.kicad_prl
+*-backups/
+fp-info-cache
+*.bak
+*_autosave-*
+*.kicad_pcb-bak
+*.kicad_sch-bak
+
+# Embedded C / IDE build artifacts
+Debug/
+Release/
+bin/
+obj/
+*.o
+*.d
+*.axf
+*.bin
+*.hex
+*.map
+.settings/
+.DS_Store
+Thumbs.db

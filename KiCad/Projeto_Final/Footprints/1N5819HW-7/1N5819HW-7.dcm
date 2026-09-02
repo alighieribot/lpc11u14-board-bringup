@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 1N5819HW-7
+D Schottky Diodes & Rectifiers Vr/40V Io/1A T/R
+K
+F https://www.diodes.com/assets/Datasheets/ds30217.pdf
+$ENDCMP
+#
+#End Doc Library

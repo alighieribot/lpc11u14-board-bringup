@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 70246-1002
+D Molex, C-Grid, 70246, 10 Way, 2 Row, Straight PCB Header
+K
+F https://www.molex.com/pdm_docs/sd/702461002_sd.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTST-C150GKT
+D LED,SMD,1206,Green,6mcd,130deg Lite-On LTST-C150GKT, CHIPLED 1206 Series Green LED, 569 nm 3216 (1206), Rectangle Lens SMD package
+K
+F https://componentsearchengine.com/Datasheets/1/LTST-C150GKT.pdf
+$ENDCMP
+#
+#End Doc Library
