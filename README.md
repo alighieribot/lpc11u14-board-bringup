@@ -14,7 +14,7 @@ O projeto foi concebido e implementado no âmbito da disciplina **PBLE02 (Projet
 
 ---
 
-## 👥 Equipe do Projeto (Grupo 1)
+## Equipe do Projeto (Grupo 1)
 
 | Integrante | Matrícula |
 | :--- | :---: |
@@ -28,7 +28,7 @@ O projeto foi concebido e implementado no âmbito da disciplina **PBLE02 (Projet
 
 ---
 
-## 📸 Visão Geral da Placa de Circuito Impresso (PCB)
+## Visão Geral da Placa de Circuito Impresso (PCB)
 
 A placa física foi projetada respeitando dimensões compactas de $80 \times 80\text{ mm}^2$ em substrato de fibra de vidro FR-4 de duas camadas condutivas, espessura de 1,6 mm, acabamento superficial HASL com chumbo, máscara de solda verde e serigrafia branca, fabricada pela JLCPCB.
 
@@ -40,17 +40,17 @@ A placa física foi projetada respeitando dimensões compactas de $80 \times 80\
 | :---: |
 | ![PCB Top Original](docs/images/pcb_3d_top_original.png) |
 
-> 💡 **BOM Interativo (iBOM):** O repositório inclui a lista de materiais interativa gerada pelo plugin *Interactive HTML BOM*. Para navegar visualmente por cada componente, ilha e footprint na placa, abra em seu navegador o arquivo [`KiCad/Projeto_Final/bom/ibom.html`](KiCad/Projeto_Final/bom/ibom.html).
+> **BOM Interativo (iBOM):** O repositório inclui a lista de materiais interativa gerada pelo plugin *Interactive HTML BOM*. Para navegar visualmente por cada componente, ilha e footprint na placa, abra em seu navegador o arquivo [`KiCad/Projeto_Final/bom/ibom.html`](KiCad/Projeto_Final/bom/ibom.html).
 
 ---
 
-## 📐 Arquitetura de Hardware & Subcircuitos
+## Arquitetura de Hardware & Subcircuitos
 
 O sistema é subdividido em 5 subsistemas funcionais integrados:
 
 ```mermaid
 graph TD
-    PS["1. Subcircuito de Alimentação<br/>Jack DC 7-12V ➔ LD1117 5.0V & 3.3V"] --> MCU["2. Processamento Central<br/>NXP LPC11U14F ARM Cortex-M0 @ 48MHz"]
+    PS["1. Subcircuito de Alimentação<br/>Jack DC 7-12V -> LD1117 5.0V & 3.3V"] --> MCU["2. Processamento Central<br/>NXP LPC11U14F ARM Cortex-M0 @ 48MHz"]
     PS --> COMM["5. Comunicação Serial<br/>FTDI FT232RL USB-UART"]
     PS --> HMI["3. Interface Homem-Máquina<br/>LCD 16x2, Encoder Bourns, 4x Teclas, LEDs"]
     PS --> PERIPH["4. Periféricos & Armazenamento<br/>EEPROM I2C 24LC512 + Headers Expansão"]
@@ -131,7 +131,7 @@ Durante o desenvolvimento no KiCad 9, a conformidade de conexões e fabricabilid
 
 ---
 
-## 🛠️ Board Bring-Up: Modificações Físicas & Memorial de Cálculos
+## Board Bring-Up: Modificações Físicas & Memorial de Cálculos
 
 Durante a etapa prática de validação e *bring-up* em bancada com osciloscópio digital e multímetro de precisão, foram diagnosticadas discrepâncias no circuito original que demandaram **engenharia de retrabalho** (cortes de trilhas na PCI, soldagem de *jumpers* de precisão e readequação de componentes passivos).
 
@@ -176,7 +176,7 @@ Durante a etapa prática de validação e *bring-up* em bancada com osciloscópi
 ---
 
 ### 5. Retrabalhos Físicos de Roteamento (Cortes e Jumpers)
-1. **Migração LPC1114 ➔ LPC11U14F:** Adaptação da distribuição de pinos do microcontrolador e inclusão do header `LPC11Uxx.h` no firmware.
+1. **Migração LPC1114 -> LPC11U14F:** Adaptação da distribuição de pinos do microcontrolador e inclusão do header `LPC11Uxx.h` no firmware.
 2. **LCD ENABLE (E):** Trilha cortada no pino 19 (`USB_DM`) e religada por *jumper* ao pino 13 (`PIO1_20`).
 3. **LCD DATA 4 (DB4):** Trilha cortada no pino 20 (`USB_DP`) e religada por *jumper* ao pino 24 (`PIO1_28`).
 4. **Tecla Bootloader ISP (SW6):** Desconectada do pino 25 e religada por *jumper* ao pino 4 (`PIO0_1`), pino de hardware que força a entrada no bootloader ISP ROM do LPC11U14F.
@@ -185,7 +185,7 @@ Durante a etapa prática de validação e *bring-up* em bancada com osciloscópi
 
 ---
 
-## 💻 Arquitetura de Software & Firmware Embarcado
+## Arquitetura de Software & Firmware Embarcado
 
 O firmware foi desenvolvido em **C (padrão C99)** bare-metal para microcontroladores ARM Cortex-M0, estruturado em uma arquitetura orientada a eventos e baseada em uma **Máquina de Estados Finitos (FSM - Finite State Machine)** determinística.
 
@@ -255,14 +255,14 @@ O transceptor USB-Serial executa um *parser* de comandos ASCII permitindo tanto 
 
 ---
 
-## 🗺️ Mapa de Pinos do Microcontrolador LPC11U14F
+## Mapa de Pinos do Microcontrolador LPC11U14F
 
 Diagrama oficial do encapsulamento LQFP-48 e mapa de conexão das portas com o hardware físico:
 
 ![Pinout LPC11U14F](docs/images/mcu_pinout_lpc11u14.png)
 
 <details open>
-<summary><b>🔍 Tabela Completa dos 48 Pinos do LPC11U14F</b></summary>
+<summary><b>Tabela Completa dos 48 Pinos do LPC11U14F</b></summary>
 
 | Pino | Porta GPIO | Função / Conexão no Esquemático | Destino Físico |
 | :---: | :---: | :--- | :--- |
@@ -319,7 +319,7 @@ Diagrama oficial do encapsulamento LQFP-48 e mapa de conexão das portas com o h
 
 ---
 
-## ⚡ Balanço Elétrico & Consumo de Potência
+## Balanço Elétrico & Consumo de Potência
 
 A estimativa do consumo total do protótipo foi calculada considerando correntes máximas em regime contínuo:
 
@@ -335,7 +335,7 @@ A estimativa do consumo total do protótipo foi calculada considerando correntes
 
 ---
 
-## 💰 Orçamento e Custos de Fabricação
+## Orçamento e Custos de Fabricação
 
 - **Lote de Componentes Eletrônicos (BOM):** **US$ 29,54** (aquisição em distribuidores autorizados como Mouser e Digi-Key).
 - **Manufatura das Placas (JLCPCB):** **US$ 2,00** (lote com 5 unidades em FR-4 dupla face, 1.6 mm, 1 oz cobre, acabamento HASL).
@@ -344,7 +344,7 @@ A estimativa do consumo total do protótipo foi calculada considerando correntes
 
 ---
 
-## 🚀 Guia de Compilação e Gravação
+## Guia de Compilação e Gravação
 
 ### 1. Ferramentas Necessárias
 - **KiCad EDA:** Versão 9.0.2 ou superior.
@@ -367,7 +367,7 @@ A estimativa do consumo total do protótipo foi calculada considerando correntes
 
 ---
 
-## 📂 Estrutura de Diretórios do Repositório
+## Estrutura de Diretórios do Repositório
 
 ```text
 .
@@ -438,6 +438,6 @@ A estimativa do consumo total do protótipo foi calculada considerando correntes
 
 ---
 
-## 📜 Licença
+## Licença
 
 Este projeto é disponibilizado sob os termos da licença **MIT**. Para maiores informações, consulte o arquivo [LICENSE](LICENSE).
